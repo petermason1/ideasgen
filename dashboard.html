@@ -4,58 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Static Launch Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      padding: 40px 16px 60px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 32px;
-      font-size: clamp(32px, 5vw, 48px);
-    }
-    .list {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    a {
-      display: block;
-      padding: 18px 22px;
-      border-radius: 18px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      color: inherit;
-      text-decoration: none;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-    a span {
-      display: block;
-      font-size: 14px;
-      color: #94a3b8;
-      margin-top: 6px;
-    }
-    a:hover {
-      transform: translateY(-4px);
-      border-color: #38bdf8;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>HTML Launch Dashboard</h1>
-  <div class="list">
-    <a href="index.html">Launch Hub Index<span>Primary landing hub that links every artifact</span></a>
-    <a href="secure-features-landing.html">Secure AI Control Stack<span>Sales sheet explaining the control stack</span></a>
-    <a href="secure-launch-studio.html">Secure AI Launch Studio<span>Consultancy landing page</span></a>
-    <a href="trade.html">Trade Registration<span>Gate for serious operators</span></a>
-    <a href="dream.html">Dream Creator Mode<span>Premium "Land of the Pharaohs" upsell</span></a>
-    <a href="godmode-runner.html">God Mode Runner<span>Internal console to hit /api/god-mode/analyze</span></a>
-    <a href="web-dev-quotes.html">Web Dev Quote Feed<span>Example of HTML-only signal remix</span></a>
+  <header class="page-header">
+    <p class="page-eyebrow">Directory</p>
+    <h1 class="page-title">HTML Launch Dashboard</h1>
+    <p class="page-subtitle">Quick links to every static artifact. Use this page when you need a fast overview without the full UI.</p>
+  </header>
+  <div class="list-stack">
+    <a class="list-link" href="index.html">Launch Hub Index<span>Primary landing hub that links every artifact.</span></a>
+    <a class="list-link" href="secure-features-landing.html">Secure AI Control Stack<span>Sales sheet explaining the control stack.</span></a>
+    <a class="list-link" href="secure-launch-studio.html">Secure AI Launch Studio<span>Consultancy landing page.</span></a>
+    <a class="list-link" href="trade.html">Trade Registration<span>Gate for serious operators.</span></a>
+    <a class="list-link" href="dream.html">Dream Creator Mode<span>Premium "Land of the Pharaohs" upsell.</span></a>
+    <a class="list-link" href="godmode-runner.html">God Mode Runner<span>Internal console to hit /api/god-mode/analyze.</span></a>
+    <a class="list-link" href="web-dev-quotes.html">Web Dev Quote Feed<span>Example of HTML-only signal remix.</span></a>
+  </div>
+  <div class="cta-bar">
+    <button class="cta-button" onclick="window.location.href='mailto:founder@secureai-control.com?subject=Dashboard%20Review'">
+      Ask for Founder Review
+    </button>
   </div>
 </body>
 </html>

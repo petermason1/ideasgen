@@ -4,135 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Secure AI Control – Launch Hub</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: radial-gradient(circle at top, rgba(99,102,241,0.3), transparent 40%), #020617;
-      color: #e2e8f0;
-      padding: 48px 16px 64px;
-    }
-    header {
-      max-width: 960px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: clamp(36px, 6vw, 60px);
-      margin-bottom: 12px;
-    }
-    header p {
-      color: #94a3b8;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 640px;
-    }
-    .grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    a.card {
-      text-decoration: none;
-      border-radius: 24px;
-      border: 1px solid rgba(148,163,184,0.25);
-      padding: 24px;
-      background: rgba(15,23,42,0.85);
-      box-shadow: 0 20px 45px rgba(2,6,23,0.5);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    a.card:hover {
-      transform: translateY(-6px);
-      border-color: #818cf8;
-    }
-    .eyebrow {
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: #a5b4fc;
-    }
-    h2 {
-      margin: 0;
-      font-size: 20px;
-      color: #f8fafc;
-    }
-    p.desc {
-      margin: 0;
-      color: #cbd5f5;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-    footer {
-      max-width: 960px;
-      margin: 48px auto 0;
-      text-align: center;
-      color: #64748b;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <p class="eyebrow">Founder Access Only</p>
-    <h1>Secure AI Control Launch Hub</h1>
-    <p>Every link below is a standalone HTML artifact hosted on Vercel. No app code, no secrets—just the pages we're ready to demo.</p>
+  <header class="page-header">
+    <p class="page-eyebrow">Founder Access Only</p>
+    <h1 class="page-title">Secure AI Control Launch Hub</h1>
+    <p class="page-subtitle">Every link below is a standalone HTML artifact hosted on Vercel. No app code, no secrets—just the pages we're ready to demo.</p>
   </header>
 
-  <section class="grid">
-    <a class="card" href="secure-features-landing.html">
+  <section class="card-grid">
+    <a class="card-link" href="secure-features-landing.html">
       <span class="eyebrow">Feature Stack</span>
       <h2>Secure AI Control Stack</h2>
-      <p class="desc">Glassmorphism sales sheet explaining the governance-first control suite.</p>
+      <p>Glassmorphism sales sheet explaining the governance-first control suite.</p>
     </a>
 
-    <a class="card" href="secure-launch-studio.html">
+    <a class="card-link" href="secure-launch-studio.html">
       <span class="eyebrow">Service</span>
       <h2>Secure AI Launch Studio</h2>
-      <p class="desc">Consultancy pitch for enterprise-grade rollouts with private walk-throughs.</p>
+      <p>Consultancy pitch for enterprise-grade rollouts with private walk-throughs.</p>
     </a>
 
-    <a class="card" href="dashboard.html">
+    <a class="card-link" href="dashboard.html">
       <span class="eyebrow">Directory</span>
       <h2>HTML Launch Dashboard</h2>
-      <p class="desc">Plain listing of every static artifact with quick explanations.</p>
+      <p>Plain listing of every static artifact with quick explanations.</p>
     </a>
 
-    <a class="card" href="trade.html">
+    <a class="card-link" href="control-console.html">
+      <span class="eyebrow">Control</span>
+      <h2>Founder Control Console</h2>
+      <p>Static mock of approvals, kill switch hooks, and audit snapshots.</p>
+    </a>
+
+    <a class="card-link" href="trade.html">
       <span class="eyebrow">Access</span>
       <h2>Trade Registration</h2>
-      <p class="desc">Fogstar-inspired registration splash that filters serious operators.</p>
+      <p>Fogstar-inspired registration splash that filters serious operators.</p>
     </a>
 
-    <a class="card" href="dream.html">
+    <a class="card-link" href="dream.html">
       <span class="eyebrow">Experience</span>
       <h2>Dream Creator Mode</h2>
-      <p class="desc">Premium upsell for the Land of the Pharaohs VR-grade storytelling demo.</p>
+      <p>Premium upsell for the "Land of the Pharaohs" VR-grade storytelling demo.</p>
     </a>
 
-    <a class="card" href="godmode-runner.html">
+    <a class="card-link" href="godmode-runner.html">
       <span class="eyebrow">Internal</span>
       <h2>God Mode Runner</h2>
-      <p class="desc">Local console to blast prompts through our multi-persona analyzer.</p>
+      <p>Local console to blast prompts through our multi-persona analyzer.</p>
     </a>
 
-    <a class="card" href="web-dev-quotes.html">
+    <a class="card-link" href="web-dev-quotes.html">
       <span class="eyebrow">Signal Lab</span>
       <h2>Web Dev Quote Feed</h2>
-      <p class="desc">Example of the HTML-only pipeline remixing curated content.</p>
+      <p>Example of the "HTML-only" pipeline remixing curated content.</p>
     </a>
   </section>
 
-  <footer>
-    All artifacts live in this repodeploy the `/deploy` folder plus referenced HTML to Vercel for static hosting only.
+  <div class="cta-bar">
+    <button class="cta-button" onclick="window.location.href='mailto:founder@secureai-control.com?subject=Launch%20Hub%20Access'">
+      Request Private Walkthrough
+    </button>
+    <button class="cta-button secondary" onclick="window.location.href='dashboard.html'">
+      View Plain Directory
+    </button>
+  </div>
+
+  <footer class="page-footer">
+    All artifacts live in this repo—deploy the `deploy/` folder plus referenced HTML to Vercel for static hosting only.
   </footer>
 </body>
 </html>

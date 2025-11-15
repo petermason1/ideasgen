@@ -9,6 +9,7 @@ This folder contains the standalone HTML pages we ship publicly:
 - `dream.html` – Dream Creator upsell
 - `godmode-runner.html` – internal console (kept here for completeness)
 - `web-dev-quotes.html` – sample signal remix
+- `control-console.html` – founder control console mock
 - `styles.css` – shared styling
 
 Everything else in the main project stays private.

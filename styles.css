@@ -1,0 +1,90 @@
+:root { color-scheme: dark; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(45,241,193,0.15), transparent 50%), #030612;
+  color: #f7f8ff;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.card, main.dream-card {
+  width: min(960px, 100%);
+  background: rgba(6,9,16,0.94);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 34px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 25px 90px rgba(0,0,0,0.65);
+}
+.dream-card {
+  text-align: center;
+}
+.pill {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border:1px solid rgba(79,209,197,0.4);
+  color:#b8fff4;
+  letter-spacing:.15em;
+  font-size:.8rem;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+h1 { font-size: clamp(2.3rem, 4vw, 3.4rem); margin:0 0 1rem; }
+p.lead { font-size:1.15rem; color:#c4c7e6; margin-bottom:2rem; line-height:1.6; }
+.feature-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:1.5rem;
+  margin-bottom:2rem;
+}
+.feature {
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:1.2rem;
+  background:rgba(255,255,255,0.03);
+}
+.feature h3 { margin:0 0 .5rem; font-size:1.05rem; }
+.feature p { margin:0; color:#99a0c7; font-size:.95rem; line-height:1.5; }
+.cta, .cta-section {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.cta-section {
+  margin-top:2rem;
+}
+.cta-card, .contact-card {
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:1.2rem;
+  background:rgba(255,255,255,0.03);
+}
+@media (min-width: 640px) {
+  .cta { flex-direction:row; }
+  .cta-section { flex-direction:row; }
+}
+button {
+  border:none;
+  border-radius:999px;
+  padding:.95rem 1.6rem;
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .14s ease;
+}
+button.primary {
+  background:linear-gradient(120deg,#3be7ff,#47ffa0);
+  color:#051327;
+  font-weight:600;
+  box-shadow:0 12px 35px rgba(59,231,255,.35);
+}
+button.secondary, .cta-card button {
+  background:transparent;
+  border:1px solid rgba(255,255,255,.35);
+  color:#f4f6ff;
+}
+button:hover { transform:translateY(-3px); }
+a { color:#b8fff4; text-decoration:none; }
+main { text-align:left; }
+

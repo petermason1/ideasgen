@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>God Mode Idea Runner</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617 65%);
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .panel {
+      width: min(960px, 100%);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 20px 60px rgba(2, 6, 23, 0.8);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 4vw, 46px);
+    }
+    p {
+      margin: 0 0 24px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      margin-bottom: 8px;
+    }
+    select, textarea, button {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.7);
+      color: inherit;
+      padding: 14px 16px;
+      font-size: 16px;
+      outline: none;
+    }
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+      margin-bottom: 20px;
+    }
+    select {
+      margin-bottom: 20px;
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 18px;
+      padding: 18px;
+      font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .result {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Local God Mode Runner</h1>
+    <p>Founder-only console. Choose a personality, drop your context, and run the /api/god-mode/analyze endpoint. Output stays local.</p>
+
+    <label for="mode">Personality Mode</label>
+    <select id="mode">
+      <option value="strategic">Strategic</option>
+      <option value="moonshot">Moonshot</option>
+      <option value="thunder">Thunder</option>
+      <option value="war">War</option>
+      <option value="love">Love</option>
+      <option value="unhinged">Unhinged</option>
+    </select>
+
+    <label for="prompt">Prompt</label>
+    <textarea id="prompt" placeholder="Describe the idea, constraints, plus what you want back..."></textarea>
+
+    <button id="runBtn">Run God Mode</button>
+
+    <div class="result" id="result" hidden>
+      <label>Output</label>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('runBtn');
+    const resultBox = document.getElementById('result');
+    const outputEl = document.getElementById('output');
+
+    async function runGodMode() {
+      const mode = document.getElementById('mode').value;
+      const prompt = document.getElementById('prompt').value.trim();
+      if (!prompt) {
+        alert('Prompt required.');
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Running...';
+      outputEl.textContent = '';
+      resultBox.hidden = true;
+
+      try {
+        const res = await fetch('/api/god-mode/analyze', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ mode, prompt }),
+        });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        outputEl.textContent = JSON.stringify(data, null, 2);
+        resultBox.hidden = false;
+      } catch (err) {
+        outputEl.textContent = 'Error: ' + err.message;
+        resultBox.hidden = false;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Run God Mode';
+      }
+    }
+
+    btn.addEventListener('click', runGodMode);
+  </script>
+</body>
+</html>

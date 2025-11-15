@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure AI Control Stack</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(98, 114, 255, 0.18), transparent 40%),
+                  radial-gradient(circle at 80% 0%, rgba(226, 183, 20, 0.22), transparent 45%),
+                  linear-gradient(180deg, #03040a 0%, #0a0c16 60%, #05060a 100%);
+      color: #f5f6ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+    .card {
+      width: min(960px, 100%);
+      background: rgba(7, 9, 18, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 30px;
+      padding: clamp(2.2rem, 4vw, 3.5rem);
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+    h1 { font-size: clamp(2.2rem, 4vw, 3rem); margin-top: 0; letter-spacing: 0.04em; }
+    p.lead { color: #c5c8ff; font-size: 1.2rem; margin-bottom: 2rem; }
+    .pill {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      background: rgba(98, 114, 255, 0.15);
+      border: 1px solid rgba(98, 114, 255, 0.35);
+      color: #cfd3ff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.6rem;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 1.25rem;
+      min-height: 160px;
+      transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+    .feature:hover {
+      border-color: rgba(226, 183, 20, 0.45);
+      background: rgba(226, 183, 20, 0.08);
+      transform: translateY(-4px);
+    }
+    .feature h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: #f7f9ff; }
+    .feature p { margin: 0; color: #9ba0c9; line-height: 1.4; font-size: 0.95rem; }
+    .cta {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cta button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.9rem 1.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    .cta button.primary {
+      background: #e2b714;
+      color: #0c0f18;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(226, 183, 20, 0.35);
+    }
+    .cta button.secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e5e8ff;
+    }
+    .cta button:hover { transform: translateY(-2px); }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8288b5;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="pill">Secure AI Control • Trade Access</span>
+    <h1 id="hero-title">Partner & Integration Suite</h1>
+    <p class="lead">Apply for private access to our governance dashboard. Every integration is vetted by Security, Legal, and Ops before we open the gates.</p>
+
+    <section class="feature-grid">
+      <article class="feature">
+        <h3>Manual Oversight</h3>
+        <p>Founder-first approvals, biometric kill switch, and tamper-evident logging.</p>
+      </article>
+      <article class="feature">
+        <h3>Department Flags</h3>
+        <p>Security, Legal, Accounts, and Ops auto-notified on each partner workflow.</p>
+      </article>
+      <article class="feature">
+        <h3>Audit Snippets</h3>
+        <p>Offline copies of every approval or halt—share them only when necessary.</p>
+      </article>
+      <article class="feature">
+        <h3>Sandbox Intake</h3>
+        <p>Submit your use case. We stress-test it before any AI agent touches your data.</p>
+      </article>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-card">
+        <h2>Request Trade Access</h2>
+        <p>Tell us who you are, what you’d like to integrate, and how many AI workflows you plan to govern. We review everything offline and reply with a private invite.</p>
+        <button onclick="alert('Trade application recorded. Founder & Security will follow up privately.');">Submit Trade Application</button>
+      </div>
+      <div class="contact-card">
+        <h2>Contact (NDA Required)</h2>
+        <p>
+          Secure AI Control Ltd<br>
+          Encrypted Operations Hub (UK-based)<br>
+          VAT & Company No. provided upon NDA execution<br>
+          trade@secureai-control.com
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
